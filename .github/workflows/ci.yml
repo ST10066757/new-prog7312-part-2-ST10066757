@@ -1,0 +1,32 @@
+name: .NET Framework CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.0.5
+
+    - name: Restore NuGet packages
+      run: nuget restore
+
+    - name: Find msbuild
+      id: msbuild
+      run: |
+        echo "::set-output name=msbuild_path::$(vswhere -latest -products * -requires Microsoft.Component.MSBuild -find MSBuild\**\Bin\MSBuild.exe)"
+
+    - name: Build project
+      run: |
+        &"${{ steps.msbuild.outputs.msbuild_path }}" /p:Configuration=Release

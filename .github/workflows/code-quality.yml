@@ -1,0 +1,25 @@
+name: Code Quality Check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install NuGet dependencies
+        run: nuget restore
+
+      - name: Build using MSBuild
+        run: |
+          & 'C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\MSBuild.exe' 'D:\a\prog7312-part-1-ST10066757\prog7312-part-1-ST10066757\MunicipalServiceApp.sln' /p:Configuration=Release /p:Platform="Any CPU" /p:TreatWarningsAsErrors=true
+        shell: pwsh

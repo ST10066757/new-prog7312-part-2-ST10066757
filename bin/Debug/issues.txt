@@ -1,0 +1,5 @@
+1 Link Road|Sanitation|No Water|C:\Users\raven\OneDrive\Pictures\Screenshots\Screenshot (10).png
+1|Sanitation|2|C:\Users\raven\OneDrive\Pictures\Screenshots\Screenshot (11).png
+12 adams road|Sanitation|no water|C:\Users\raven\OneDrive\Pictures\Screenshots\Screenshot (11).png
+1|Roads|2|C:\Users\raven\OneDrive\Pictures\Screenshots\Screenshot 2024-09-01 155719.png
+1|Sanitation|2|C:\Users\raven\OneDrive\Pictures\Screenshots\Screenshot 2024-09-01 155719.png
